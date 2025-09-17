@@ -18,7 +18,7 @@ model = YOLO("yolov8n.pt")  # small YOLO model
 
 # Initialize MQTT client with WebSocket transport
 mqttc = mqtt.Client(transport="websockets")
-mqttc.connect(, MQTT_PORT, 60)
+mqttc.connect(MQTT_BROKER, MQTT_PORT, 60)
 
 # Time of last publish
 last_publish = time.time()
@@ -67,3 +67,4 @@ while True:
 # Release resources
 cap.release()
 cv2.destroyAllWindows()
+
